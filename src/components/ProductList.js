@@ -4,9 +4,10 @@ import Title from './Title';
 import {storeProducts} from '../data';
 export default class ProductList extends Component {
     state={
-        products: []
+        products: storeProducts
     }
     render() {
+        console.log (this.state.products);
         return (
             <React.Fragment>
             <div className="py-5">
