@@ -97,7 +97,7 @@ export const storeProducts = [
     total: 0
   },
   {
-    id: 8,
+    id: 9,
     title: "Smashed Iphone",
     img: "img/product-19.jpeg",
     price: 2,
@@ -109,7 +109,7 @@ export const storeProducts = [
     total: 0
   },
   {
-    id: 8,
+    id: 10,
     title: "Smashed Iphone",
     img: "img/product-13.jpeg",
     price: 2,
@@ -121,7 +121,7 @@ export const storeProducts = [
     total: 0
   },
   {
-    id: 8,
+    id: 11,
     title: "Smashed Iphone",
     img: "img/product-17.jpeg",
     price: 2,
@@ -133,7 +133,7 @@ export const storeProducts = [
     total: 0
   },
   {
-    id: 8,
+    id: 12,
     title: "Smashed Iphone",
     img: "img/product-11.jpg",
     price: 2,
