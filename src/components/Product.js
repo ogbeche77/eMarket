@@ -48,7 +48,24 @@ const ProductWrapper = styled.div`
 }
 &:hover{
     .card{
-        border:0.04rem solid rgba(0,0,0,0.2);
+        border:0.04rem solid grey;
+        box-shadow:2px 2px 5px 0px rgba(0,0,0,0.2);
     }
+    .card-footer{
+        background:rgba(247,247,247);
+    }
+}
+.img-container{
+    position: relative;
+    overflow: hidden;
+}
+.card-img-top{
+    transition: all 1s linear;
+}
+.img-container:hover .card-img-top{
+    transform:scale(1.2);
+}
+.cart-btn{
+    position:absolute;
 }
 `;
