@@ -5,6 +5,7 @@ text-transform: capitalize;
 font-size: 1.4rem;
 background: transparent;
 border: 0.2rem solid orange;
+border-color: ${props => props.cart? "blue" : "orange"};
 color: orange;
 border-radius: 0.5rem;
 paddding: 0.2rem 0.5rem;
