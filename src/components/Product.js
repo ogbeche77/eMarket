@@ -76,6 +76,12 @@ const ProductWrapper = styled.div`
     font-size: 1.5rem;
     border-radius:0.5rem 0 0 0.5rem;
     transform:translate(100%, 100%);
-   
+}
+.img-container:hover .cart-btn{
+    transform: translate(0, 0);
+    transition: all 0.5s linear;
+}
+.cart-btn:hover{
+    cursor: pointer;
 }
 `;
