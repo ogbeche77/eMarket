@@ -32,7 +32,7 @@ const ProductContext = React.createContext(); //context object created
      }
 
      handleDetail = (id) =>{
-        const product = this.getItem();
+        const product = this.getItem(id);
         this.setState(()=>{
             return {detailProduct:product}
         })
