@@ -30,6 +30,12 @@ export default class Details extends Component {
                 Manufactured by : <span className="text-upppercase">
                 {company}</span>
                 </h4>
+                <h4 className="text-blue">
+                <strong>
+                price :<span>€</span>
+                {price}
+                </strong>
+                </h4>
                 </div>
                 </div>
                 </div>
