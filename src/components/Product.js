@@ -67,5 +67,7 @@ const ProductWrapper = styled.div`
 }
 .cart-btn{
     position:absolute;
+    bottom:0;
+    right: 0;
 }
 `;
