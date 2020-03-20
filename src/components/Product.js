@@ -69,5 +69,13 @@ const ProductWrapper = styled.div`
     position:absolute;
     bottom:0;
     right: 0;
+    padding:0.2rem 0.4rem;
+    background: grey;
+    border:none;
+    color: orange;
+    font-size: 1.5rem;
+    border-radius:0.5rem 0 0 0.5rem;
+    transform:translate(100%, 100%);
+   
 }
 `;
