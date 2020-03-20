@@ -31,8 +31,11 @@ const ProductContext = React.createContext(); //context object created
          return product;
      }
 
-     handleDetail = () =>{
-        
+     handleDetail = (id) =>{
+        const product = this.getItem();
+        this.setState(()=>{
+            return {detailProduct:product}
+        })
      };
 
      addToCart = id =>{
