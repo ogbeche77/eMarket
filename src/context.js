@@ -49,15 +49,11 @@ const ProductContext = React.createContext(); //context object created
         product.count = 1;
         const price = product.price;
         product.total = price;
-this.setState(
-    ()=>{
+this.setState(()=>{
     return { products: tempProducts, cart: [...this.state.cart,
          product] };
-        },
-        () => { 
-            console.log(this.state);
-    }
-    );
+        
+    });
  };
 
  openModal = id =>{
@@ -73,7 +69,8 @@ closeModal = ()=>{
 };
     render() {
         return (
-            <ProductContext.Provider value={{
+            <ProductContext.Provider
+             value={{
 ...this.state, 
 handleDetail: this.handleDetail,
 addToCart: this.addToCart,
