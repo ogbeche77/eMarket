@@ -7,7 +7,7 @@ export default class Details extends Component {
     render() {
         return (
            <ProductConsumer>
-           {(value)=>{
+           {value=>{
            const {id, company, img, info, price, title, inCart} = value.detailProduct;
            return (
                <div className="container py-5">
@@ -42,17 +42,18 @@ export default class Details extends Component {
                 <p className="text-muted lead">{info}</p>
                 {/*Button*/}
                 <div>
-                <Link to = '/'>
+                <Link to = "/">
                 <ButtonContainer>
                 Back to Products</ButtonContainer>
                 </Link>
                 {/*Incart Button*/}
                 <ButtonContainer cart
-                disable={inCart?true:false}
+                disable={inCart ? true : false}
                 onClick={()=>{
                     value.addToCart(id);
+                    value.openModal(id);
                 }}>
-                {inCart?'inCart' : 'add to cart'}
+                {inCart ? "inCart" : "add to cart"}
                 </ButtonContainer>
                 </div>
                 </div>
