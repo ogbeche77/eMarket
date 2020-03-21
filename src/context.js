@@ -10,29 +10,31 @@ const ProductContext = React.createContext(); //context object created
      state ={
          products: [], 
          detailProduct: detailProduct,
-         cart:[]
+         cart:[],
+         modalOpen:true,
+         modalProduct:detailProduct,
      };
      componentDidMount(){
-        this.storeProducts();
+        this.setProducts();
      }
-     storeProducts = () => {
+     setProducts = () => {
          let tempProducts = [];
          storeProducts.forEach(item =>{
              const singleItem = {...item};
              tempProducts = [...tempProducts, singleItem];
 
-         })
+         });
          this.setState(()=> {
-             return { products:tempProducts }
+             return { products:tempProducts };
          });
      };
 
-     getItem = (id) =>{
+     getItem = id =>{
          const product = this.state.products.find(item => item.id ===id);
          return product;
      }
 
-     handleDetail = (id) =>{
+     handleDetail = id =>{
         const product = this.getItem(id);
         this.setState(()=>{
             return {detailProduct:product};
@@ -57,6 +59,13 @@ this.setState(
     }
     );
  };
+
+ openModal = id =>{
+     const product = this.getItem(id);
+     this.setState(()=>{
+         return{modalProduct:product, modalOpen: true}
+     })
+ }
 
     render() {
         return (
