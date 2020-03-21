@@ -11,7 +11,7 @@ const ProductContext = React.createContext(); //context object created
          products: [], 
          detailProduct: detailProduct,
          cart:[],
-         modalOpen:true,
+         modalOpen:false,
          modalProduct:detailProduct,
      };
      componentDidMount(){
