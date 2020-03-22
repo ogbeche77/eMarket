@@ -12,7 +12,10 @@ const ProductContext = React.createContext(); //context object created
          detailProduct: detailProduct,
          cart:[],
          modalOpen:false,
-         modalProduct:detailProduct
+         modalProduct:detailProduct,
+         cartSubTotal: 0,
+         cartTax:0,
+         cartTotal:0
      };
      componentDidMount(){
         this.setProducts();
