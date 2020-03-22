@@ -8,7 +8,7 @@ const ProductContext = React.createContext(); //context object created
 
  class ProductProvider extends Component {
      state ={
-         products: [], 
+         products: storeProducts, 
          detailProduct: detailProduct,
          cart: [],
          modalOpen:false,
