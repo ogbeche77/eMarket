@@ -10,7 +10,7 @@ const ProductContext = React.createContext(); //context object created
      state ={
          products: [], 
          detailProduct: detailProduct,
-         cart:[],
+         cart: storeProducts,
          modalOpen:false,
          modalProduct:detailProduct,
          cartSubTotal: 0,
