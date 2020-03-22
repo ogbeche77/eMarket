@@ -17,7 +17,7 @@ export default class Cart extends Component {
                         <React.Fragment>
                         <Title name="your" title="cart"/>
                          <CartColumns/>
-                         <CartList value />
+                         <CartList value={value}/>
                         </React.Fragment>  
                     );
                 }
