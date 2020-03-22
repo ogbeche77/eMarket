@@ -10,7 +10,7 @@ const ProductContext = React.createContext(); //context object created
      state ={
          products: storeProducts, 
          detailProduct: detailProduct,
-         cart: storeProducts,
+         cart: [],
          modalOpen:false,
          modalProduct:detailProduct,
          cartSubTotal:0,
@@ -55,8 +55,12 @@ const ProductContext = React.createContext(); //context object created
 this.setState(()=>{
     return { products: tempProducts, cart: [...this.state.cart,
          product] };
+    },
+    () =>{
+        this.addTotals();
+    }
         
-    });
+    );
  };
 
  openModal = id =>{
@@ -72,15 +76,29 @@ closeModal = ()=>{
 };
 increment =(id)=>{
     console.log ("increment");
-}
+};
 decrement = (id)=>{
     console.log("decrement");
-}
+};
 removeItem = (id)=>{
     console.log("item removed");
-}
+};
 clearCart =()=>{
     console.log("cart cleared");
+};
+addTotals =()=>{
+   let subTotal = 0; 
+   this.state.cart.map(item =>(subTotal += item.total));
+   const tempTax = subTotal * 0.1;
+   const tax = parseFloat(tempTax.toFixed(2));
+   const total = subTotal + tax;
+   this.setState(()=>{
+       return{
+           cartSubTotal:subTotal,
+           cartTax:tax,
+           cartTotal:total
+       };
+   })
 }
     render() {
         return (
