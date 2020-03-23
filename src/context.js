@@ -75,7 +75,8 @@ closeModal = ()=>{
     });
 };
 increment =(id)=>{
-    console.log ("increment");
+    let tempCart =[...this.state.cart];
+    
 };
 decrement = (id)=>{
     console.log("decrement");
