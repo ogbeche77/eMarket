@@ -76,7 +76,11 @@ closeModal = ()=>{
 };
 increment =(id)=>{
     let tempCart =[...this.state.cart];
-    
+    const selectedProduct = tempCart.find(item=>item.id === id);
+
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+
 };
 decrement = (id)=>{
     console.log("decrement");
