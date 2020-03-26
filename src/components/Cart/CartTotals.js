@@ -23,7 +23,7 @@ export default function CartTotals({value, history}) {
 
         <h5>
         <span className="text-title">
-        carttax: </span>
+        Carttax: </span>
         <strong> € {cartTax} </strong>
         </h5>
 
