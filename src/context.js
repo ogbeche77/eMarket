@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { storeProducts, detailProduct } from "./data";
 
-const ProductContext = React.createContext(); //context object created
+const ProductContext = React.createContext(); //context object created, comes with react
 //Provider
 //Consumer
 
