@@ -74,7 +74,7 @@ class ProductProvider extends Component {
     });
   };
 
-
+ //functionality for CartItems.js/CarttColumn.js/CartList.js & CartTotal.js
   increment = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => item.id === id);
@@ -160,6 +160,8 @@ class ProductProvider extends Component {
       };
     });
   };
+
+
   render() {
     return (
       <ProductContext.Provider
