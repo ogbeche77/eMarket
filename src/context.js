@@ -19,6 +19,7 @@ class ProductProvider extends Component {
   componentDidMount() {
     this.setProducts();
   }
+  //functionality for Details.js
   setProducts = () => {
     let tempProducts = [];
     storeProducts.forEach(item => {
@@ -60,6 +61,7 @@ class ProductProvider extends Component {
     );
   };
 
+//functionality for Modal.js
   openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
@@ -71,6 +73,8 @@ class ProductProvider extends Component {
       return { modalOpen: false };
     });
   };
+
+
   increment = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => item.id === id);
