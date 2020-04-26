@@ -34,7 +34,7 @@ class ProductProvider extends Component {
     const product = this.state.products.find(item => item.id === id);
     return product;
   };
-//When img is clicked on prodyct page, this is fired
+//When img is clicked on product page, this is fired
   handleDetail = id => {
     const product = this.getItem(id);
     this.setState(() => {
