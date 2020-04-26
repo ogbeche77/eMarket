@@ -7,8 +7,7 @@ export const ButtonContainer = styled.button`
   background: transparent;
   border: 0.2rem solid orange;
   border-color: ${props => (props.cart ? "orange" : "blue")}; 
-  color: ${prop => (prop.cart ? "orange" : "blue")};
-  border-radius: 0.5rem;
+  color: ${prop => (prop.cart ? "orange" : "dark")};
   paddding: 0.2rem 0.5rem;
   cursor: pointer;
   margin: 0.2rem 0.5rem 0;
