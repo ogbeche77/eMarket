@@ -11,7 +11,7 @@ export default class Modal extends Component {
         {value => {
           const { modalOpen, closeModal } = value;
           const { img, title, price } = value.modalProduct;
-
+//functionality to open, close modal, add item to cart & continue shopping
           if (!modalOpen) {
             return null;
           } else {
@@ -28,7 +28,7 @@ export default class Modal extends Component {
                       <h5>{title}</h5>
                       <h5 className="text-muted"> Price : € {price} </h5>
                       <Link to="/">
-                        <ButtonContainer onClick={() => closeModal()}>
+                        <ButtonContainer onClick={() => closeModal()}> 
                           Continue Shopping
                         </ButtonContainer>
                       </Link>
