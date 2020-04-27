@@ -6,6 +6,7 @@ import { ProductConsumer } from "../../context";
 import CartList from "./CartList";
 import CartTotals from "./CartTotals";
 
+//cart.js is the index for cart files, only cart is imported in app.js,all other children are here
 export default class Cart extends Component {
   render() {
     return (
