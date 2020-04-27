@@ -1,6 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
 
+//CartItem is returned using the CartList
 export default function CartList({ value }) {
   const { cart } = value;
 
