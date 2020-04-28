@@ -142,7 +142,7 @@ class ProductProvider extends Component {
         return { cart: [] };
       },
       () => {
-        this.setProducts();
+        this.setProducts(); //set all modified object to default
         this.addTotals();
       }
     );
