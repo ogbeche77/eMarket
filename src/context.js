@@ -20,8 +20,9 @@ class ProductProvider extends Component {
   componentDidMount() {
     this.setProducts();
     //Local storage area
-    this.setState({cart : !localStorage.getItem("myCart") ? []
-      : JSON.parse(localStorage.getItem("myCart"))}) 
+    const cart = localStorage.getItem("myCart")
+    this.setState({cart: JSON.parse(cart) ? JSON.parse(cart) : []}, this.addTotals)
+    
   }
 
   //functionality for Details.js
@@ -65,6 +66,7 @@ class ProductProvider extends Component {
         this.addTotals();
          //Local storage added, item remains in cart even after refreshing
         localStorage.setItem('myCart', JSON.stringify(this.state.cart))
+        
       }
     );
   };
