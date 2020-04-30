@@ -19,7 +19,7 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
-    //Local storage
+    //Local storage area
     this.setState({cart : !localStorage.getItem("myCart") ? []
       : JSON.parse(localStorage.getItem("myCart"))}) 
   }
@@ -63,13 +63,10 @@ class ProductProvider extends Component {
       },
       () => {
         this.addTotals();
+         //Local storage added, item remains in cart even after refreshing
+        localStorage.setItem('myCart', JSON.stringify(this.state.cart))
       }
     );
-  };
-
-  //Local storage added, item remains in cart even after refreshing
-  saveCart = () => {
-    localStorage.setItem('myCart', JSON.stringify(this.state.cart))
   };
 
 //functionality for Modal.js
@@ -186,8 +183,8 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart,
-          saveCart: this.saveCart
+          clearCart: this.clearCart
+          
         }}
       >
         {this.props.children}
