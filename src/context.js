@@ -19,8 +19,10 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
-    /*this.setState({cart : JSON.parse(localStorage.getItem("myCart"))}) */
+    this.setState({cart : !localStorage.getItem("myCart") ? []
+      : JSON.parse(localStorage.getItem("myCart"))}) 
   }
+
   //functionality for Details.js
   setProducts = () => {
     let tempProducts = [];
@@ -37,6 +39,7 @@ class ProductProvider extends Component {
     const product = this.state.products.find(item => item.id === id);
     return product;
   };
+
 //When img is clicked on product page, this is fired
   handleDetail = id => {
     const product = this.getItem(id);
@@ -63,7 +66,7 @@ class ProductProvider extends Component {
     );
   };
 
-  //Local storage added
+  //Local storage added, item remains in cart even after refreshing
   saveCart = () => {
     localStorage.setItem('myCart', JSON.stringify(this.state.cart))
   };
