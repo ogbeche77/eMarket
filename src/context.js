@@ -16,8 +16,10 @@ class ProductProvider extends Component {
     cartTax: 0,
     cartTotal: 0
   };
+
   componentDidMount() {
     this.setProducts();
+    /*this.setState({cart : JSON.parse(localStorage.getItem("myCart"))}) */
   }
   //functionality for Details.js
   setProducts = () => {
@@ -59,6 +61,10 @@ class ProductProvider extends Component {
         this.addTotals();
       }
     );
+  };
+
+  saveCart = () => {
+    localStorage.setItem('myCart', JSON.stringify(this.state.cart))
   };
 
 //functionality for Modal.js
@@ -175,7 +181,8 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart
+          clearCart: this.clearCart,
+          saveCart: this.saveCart
         }}
       >
         {this.props.children}
