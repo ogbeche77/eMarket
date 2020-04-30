@@ -63,6 +63,7 @@ class ProductProvider extends Component {
     );
   };
 
+  //Local storage added
   saveCart = () => {
     localStorage.setItem('myCart', JSON.stringify(this.state.cart))
   };
