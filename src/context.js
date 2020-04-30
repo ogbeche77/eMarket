@@ -19,6 +19,7 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
+    //Local storage
     this.setState({cart : !localStorage.getItem("myCart") ? []
       : JSON.parse(localStorage.getItem("myCart"))}) 
   }
