@@ -19,7 +19,7 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
-    //Local storage area
+    //Local storage area (Item and cart total)
     const cart = localStorage.getItem("myCart")
     this.setState({cart: JSON.parse(cart) ? JSON.parse(cart) : []}, this.addTotals)
     
