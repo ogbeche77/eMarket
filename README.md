@@ -24,7 +24,7 @@ eCommerce website built using ReactJS. React’s Context API was used for state 
 * styled-components - version 5.0.1
 
 ## Setup
-IDE used was Visual Studio Code. The application can run locally on localhost 3000. It is also currently deployed on github pages https://buy-automobile.herokuapp.com/
+IDE used was Visual Studio Code. The application can run locally on localhost 3000. It is also currently deployed on heroku https://buy-automobile.herokuapp.com/
 All necessary dependencies were installed, as seen in package.json
 
 ## Status
