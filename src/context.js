@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { storeProducts, detailProduct } from "./data";
 
 //context object created
-const ProductContext = React.createContext(); 
+const ProductContext = React.createContext();
 //Provider
 //Consumer
 
@@ -20,10 +20,10 @@ class ProductProvider extends Component {
 
   componentDidMount() {
     this.setProducts();
-    //Local storage area (Item and cart total)
+    //Local storage area created (Item and cart total)
     const cart = localStorage.getItem("myCart")
-    this.setState({cart: JSON.parse(cart) ? JSON.parse(cart) : []}, this.addTotals)
-    
+    this.setState({ cart: JSON.parse(cart) ? JSON.parse(cart) : [] }, this.addTotals)
+
   }
 
   //functionality for Details.js
@@ -43,7 +43,7 @@ class ProductProvider extends Component {
     return product;
   };
 
-//When img is clicked on product page, this is fired
+  //When img is clicked on product page, this is fired
   handleDetail = id => {
     const product = this.getItem(id);
     this.setState(() => {
@@ -65,14 +65,15 @@ class ProductProvider extends Component {
       },
       () => {
         this.addTotals();
-         //Local storage added, item remains in cart even after refreshing
+
+        //Local storage added, item remains in cart even after pages is refreshed
         localStorage.setItem('myCart', JSON.stringify(this.state.cart))
-        
+
       }
     );
   };
 
-//functionality for Modal.js
+  //functionality for Modal.js
   openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
@@ -85,7 +86,7 @@ class ProductProvider extends Component {
     });
   };
 
- //functionality for CartItems.js/CarttColumn.js/CartList.js & CartTotal.js
+  //functionality to add items to cart
   increment = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => item.id === id);
@@ -103,6 +104,8 @@ class ProductProvider extends Component {
       }
     );
   };
+
+  //Functionality to reduce or decrease cart contents
   decrement = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => item.id === id);
@@ -114,7 +117,7 @@ class ProductProvider extends Component {
       this.removeItem(id);
     } else {
       product.total = product.count * product.price;
-      
+
       this.setState(
         () => {
           return { cart: [...tempCart] };
@@ -125,11 +128,13 @@ class ProductProvider extends Component {
       );
     }
   };
+
+  //Functionality to remove cart content(s)
   removeItem = id => {
     let tempProducts = [...this.state.products];
     let tempCart = [...this.state.cart];
 
-    tempCart = tempCart.filter(item => item.id !== id); //returns the remaining item in the cart aside fom the one without the selected ID
+    tempCart = tempCart.filter(item => item.id !== id); //returns the remaining item in the cart aside from the one without the selected ID
     const index = tempProducts.indexOf(this.getItem(id));
     let removedProduct = tempProducts[index];
     removedProduct.inCart = false;
@@ -147,6 +152,7 @@ class ProductProvider extends Component {
       }
     );
   };
+  //Functionality to clear cart content
   clearCart = () => {
     this.setState(
       () => {
@@ -187,7 +193,7 @@ class ProductProvider extends Component {
           decrement: this.decrement,
           removeItem: this.removeItem,
           clearCart: this.clearCart
-          
+
         }}
       >
         {this.props.children}
