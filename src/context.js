@@ -66,7 +66,7 @@ class ProductProvider extends Component {
       () => {
         this.addTotals();
 
-        //Local storage added, item remains in cart even after page refreshes
+        //Local storage added, item remains after refreshes
         localStorage.setItem('myCart', JSON.stringify(this.state.cart))
 
       }
