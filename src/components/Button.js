@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-//props.cart ? ensures color changes when item added to cart
+//props.cart ? ensures color changes when items are added to cart
 export const ButtonContainer = styled.button`
   text-transform: capitalize;
   font-size: 1.4rem;
