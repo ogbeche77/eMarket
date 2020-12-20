@@ -28,7 +28,6 @@ eCommerce website built using ReactJS. React’s Context API was used for state 
 - react - version 16.13.1
 - react-dom - version 16.13.1
 - styled-components - version 5.0.1
-- context API
 
 ## Setup
 
