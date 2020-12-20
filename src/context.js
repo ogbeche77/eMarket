@@ -43,7 +43,7 @@ class ProductProvider extends Component {
     return product;
   };
 
-  //When img is clicked on product page, this is fired
+  //When img is clicked on product page, detailed page is called
   handleDetail = id => {
     const product = this.getItem(id);
     this.setState(() => {
