@@ -66,13 +66,14 @@ class ProductProvider extends Component {
       () => {
         this.addTotals();
 
-        //Local storage added, item remains in cart even after pages is refreshed
+        //Local storage added, item remains in cart even after page refreshes
         localStorage.setItem('myCart', JSON.stringify(this.state.cart))
 
       }
     );
   };
 
+  //functionality for Modal.js
   openModal = id => {
     const product = this.getItem(id);
     this.setState(() => {
